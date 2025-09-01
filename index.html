@@ -173,6 +173,7 @@
       box-shadow: 0 8px 25px var(--shadow-medium);
       border: 2px solid transparent;
       animation: fadeInUp 1.8s ease-out;
+      cursor: pointer;
     }
     
     .btn:hover { 
@@ -281,31 +282,212 @@
       font-size: 16px;
     }
 
-    /* ===== Education Section Enhancement ===== */
-    .education-item {
+    /* ===== Navigation Links ===== */
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .nav-link {
+      background: var(--gradient-primary);
+      color: var(--warm-white);
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-weight: 500;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px var(--shadow-light);
+    }
+
+    .nav-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px var(--shadow-medium);
+      background: var(--gradient-accent);
+      color: var(--text-dark);
+    }
+
+    /* ===== Timeline ===== */
+    .timeline {
+      max-width: 800px;
+      margin: 40px auto;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--gradient-accent);
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin: 40px 0;
+      width: 45%;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+      text-align: right;
+      padding-right: 40px;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 55%;
+      text-align: left;
+      padding-left: 40px;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: var(--primary-brown);
+      border: 4px solid var(--cream);
+      border-radius: 50%;
+      top: 20px;
+    }
+
+    .timeline-item:nth-child(odd)::before {
+      right: -8px;
+    }
+
+    .timeline-item:nth-child(even)::before {
+      left: -8px;
+    }
+
+    .timeline-content {
+      background: var(--warm-white);
+      padding: 24px;
+      border-radius: 16px;
+      box-shadow: 0 6px 25px var(--shadow-light);
+      border: 1px solid rgba(161, 136, 127, 0.1);
+    }
+
+    .timeline-date {
+      font-weight: 600;
+      color: var(--primary-brown);
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .timeline-title {
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--primary-brown);
+      margin-bottom: 12px;
+    }
+
+    /* ===== Education Enhancement ===== */
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px;
+      margin-top: 40px;
+      max-width: 1000px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .education-card {
       background: var(--warm-white);
       border-radius: 16px;
-      padding: 24px;
-      margin: 16px 0;
-      box-shadow: 0 4px 20px var(--shadow-light);
+      padding: 28px;
+      box-shadow: 0 6px 25px var(--shadow-light);
       border-left: 4px solid var(--accent-brown);
       text-align: left;
+      transition: all 0.3s ease;
     }
 
-    .education-item b {
-      color: var(--primary-brown);
-      font-size: 20px;
-      display: block;
-      margin-bottom: 8px;
+    .education-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 35px var(--shadow-medium);
+    }
+
+    .education-level {
       font-family: "Playfair Display", serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--primary-brown);
+      margin-bottom: 8px;
     }
 
-    /* ===== Socials ===== */
+    .education-details {
+      color: var(--text-light);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .education-score {
+      background: var(--gradient-accent);
+      color: var(--text-dark);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 8px;
+    }
+
+    /* ===== Tabs ===== */
+    .tabs-container {
+      max-width: 800px;
+      margin: 40px auto;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 32px;
+      background: rgba(161, 136, 127, 0.1);
+      padding: 8px;
+      border-radius: 50px;
+    }
+
+    .tab {
+      padding: 12px 32px;
+      border-radius: 25px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      color: var(--text-light);
+    }
+
+    .tab.active {
+      background: var(--gradient-primary);
+      color: var(--warm-white);
+      box-shadow: 0 4px 15px var(--shadow-light);
+    }
+
+    .tab:hover:not(.active) {
+      background: rgba(161, 136, 127, 0.2);
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeInUp 0.5s ease-out;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* ===== Social Media Icons ===== */
     .socials { 
       margin-top: 48px;
       display: flex;
       justify-content: center;
-      gap: 24px;
+      gap: 20px;
       flex-wrap: wrap;
     }
     
@@ -321,59 +503,39 @@
       color: var(--warm-white);
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       box-shadow: 0 4px 15px var(--shadow-light);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .socials a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--gradient-accent);
+      border-radius: 50%;
+      transform: scale(0);
+      transition: transform 0.3s ease;
+    }
+
+    .socials a:hover::before {
+      transform: scale(1);
+    }
+
+    .socials a i {
+      position: relative;
+      z-index: 2;
     }
     
     .socials a:hover { 
       transform: translateY(-6px) scale(1.1); 
       box-shadow: 0 8px 25px var(--shadow-medium);
-      background: var(--gradient-accent);
+    }
+
+    .socials a:hover i {
       color: var(--text-dark);
-    }
-
-    /* ===== Footer ===== */
-    footer { 
-      background: var(--gradient-primary);
-      color: var(--warm-white); 
-      text-align: center; 
-      padding: 40px 5%;
-      margin-top: 0;
-      font-weight: 400;
-      letter-spacing: 0.5px;
-    }
-
-    /* ===== Enhanced Animations ===== */
-    @keyframes fadeInUp { 
-      from {
-        transform: translateY(60px); 
-        opacity: 0;
-      } 
-      to {
-        transform: translateY(0); 
-        opacity: 1;
-      } 
-    }
-    
-    @keyframes fadeInDown { 
-      from {
-        transform: translateY(-60px); 
-        opacity: 0;
-      } 
-      to {
-        transform: translateY(0); 
-        opacity: 1;
-      } 
-    }
-
-    /* ===== Scroll Animations ===== */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.8s ease-out;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
     }
 
     /* ===== Professional Enhancements ===== */
@@ -424,67 +586,6 @@
       margin-top: 8px;
     }
 
-    /* ===== Responsive Design ===== */
-    @media (max-width: 768px) { 
-      header {
-        padding: 20px 5%;
-        flex-direction: column;
-        gap: 16px;
-      }
-      
-      nav {
-        gap: 16px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      
-      .hero h2 { 
-        font-size: 36px; 
-      }
-      
-      .section { 
-        padding: 60px 5% 40px; 
-      }
-      
-      .grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-      }
-      
-      .socials {
-        gap: 16px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header h1 {
-        font-size: 24px;
-      }
-      
-      nav a {
-        font-size: 14px;
-        padding: 6px 12px;
-      }
-      
-      .card {
-        padding: 24px 20px;
-      }
-    }
-
-    /* ===== Loading Animation ===== */
-    .loading {
-      opacity: 0;
-      animation: fadeInUp 0.8s ease-out forwards;
-    }
-
-    .loading:nth-child(1) { animation-delay: 0.1s; }
-    .loading:nth-child(2) { animation-delay: 0.2s; }
-    .loading:nth-child(3) { animation-delay: 0.3s; }
-    .loading:nth-child(4) { animation-delay: 0.4s; }
-    .loading:nth-child(5) { animation-delay: 0.5s; }
-    .loading:nth-child(6) { animation-delay: 0.6s; }
-
-    /* ===== Professional Touches ===== */
     .section-divider {
       width: 100px;
       height: 2px;
@@ -515,10 +616,151 @@
       animation: shine 0.6s ease-in-out;
     }
 
+    /* ===== Footer ===== */
+    footer { 
+      background: var(--gradient-primary);
+      color: var(--warm-white); 
+      text-align: center; 
+      padding: 40px 5%;
+      margin-top: 0;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+
+    /* ===== Enhanced Animations ===== */
+    @keyframes fadeInUp { 
+      from {
+        transform: translateY(60px); 
+        opacity: 0;
+      } 
+      to {
+        transform: translateY(0); 
+        opacity: 1;
+      } 
+    }
+    
+    @keyframes fadeInDown { 
+      from {
+        transform: translateY(-60px); 
+        opacity: 0;
+      } 
+      to {
+        transform: translateY(0); 
+        opacity: 1;
+      } 
+    }
+
     @keyframes shine {
       0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); opacity: 0; }
       50% { opacity: 1; }
       100% { transform: translateX(100%) translateY(100%) rotate(45deg); opacity: 0; }
+    }
+
+    /* ===== Scroll Animations ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== Loading Animation ===== */
+    .loading {
+      opacity: 0;
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    .loading:nth-child(1) { animation-delay: 0.1s; }
+    .loading:nth-child(2) { animation-delay: 0.2s; }
+    .loading:nth-child(3) { animation-delay: 0.3s; }
+    .loading:nth-child(4) { animation-delay: 0.4s; }
+    .loading:nth-child(5) { animation-delay: 0.5s; }
+    .loading:nth-child(6) { animation-delay: 0.6s; }
+
+    /* ===== Responsive Design ===== */
+    @media (max-width: 768px) { 
+      header {
+        padding: 20px 5%;
+        flex-direction: column;
+        gap: 16px;
+      }
+      
+      nav {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .hero h2 { 
+        font-size: 36px; 
+      }
+      
+      .section { 
+        padding: 60px 5% 40px; 
+      }
+      
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      
+      .socials {
+        gap: 16px;
+      }
+
+      .timeline::before {
+        left: 20px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        left: 0 !important;
+        text-align: left !important;
+        padding-left: 60px !important;
+        padding-right: 0 !important;
+      }
+
+      .timeline-item::before {
+        left: 12px !important;
+        right: auto !important;
+      }
+
+      .tabs {
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-link {
+        padding: 10px 20px;
+        font-size: 13px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 24px;
+      }
+      
+      nav a {
+        font-size: 14px;
+        padding: 6px 12px;
+      }
+      
+      .card {
+        padding: 24px 20px;
+      }
+
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
   <!-- FontAwesome -->
@@ -536,7 +778,6 @@
       <a href="#journey">Journey</a>
       <a href="#internships">Internships</a>
       <a href="#writing">Writing</a>
-      <a href="#hobbies">Hobbies</a>
       <a href="#freelance">Freelance</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -551,7 +792,7 @@
       
       <div class="stats-grid">
         <div class="stat-item">
-          <span class="stat-number">3+</span>
+          <span class="stat-number">5+</span>
           <span class="stat-label">Projects</span>
         </div>
         <div class="stat-item">
@@ -573,18 +814,31 @@
     <h2>My Projects</h2>
     <p class="section-intro">Showcasing my passion for technology through innovative solutions and creative implementations.</p>
     <div class="section-divider"></div>
-    <div class="grid">
-      <div class="card professional-card loading">
+    
+    <div class="nav-links">
+      <a href="#" class="nav-link" onclick="showProject('study-planner')">Study Planner</a>
+      <a href="#" class="nav-link" onclick="showProject('ml-models')">ML Models</a>
+      <a href="#" class="nav-link" onclick="showProject('web-portfolio')">Web Portfolio</a>
+      <a href="#" class="nav-link" onclick="showProject('react-apps')">React Apps</a>
+      <a href="#" class="nav-link" onclick="showProject('all')" style="background: var(--gradient-accent); color: var(--text-dark);">View All</a>
+    </div>
+
+    <div class="grid" id="projects-grid">
+      <div class="card professional-card loading project-card" data-project="study-planner">
         <h3>📘 Study Focus & Planner</h3>
         <p>A comprehensive productivity application designed to help students manage study hours, track deadlines, and optimize focus sessions with <span class="highlight">smart scheduling algorithms</span>.</p>
       </div>
-      <div class="card professional-card loading">
+      <div class="card professional-card loading project-card" data-project="ml-models">
         <h3>📊 ML Models</h3>
         <p>Developed beginner-friendly machine learning models for <span class="highlight">prediction and analysis</span>, focusing on practical applications and educational value.</p>
       </div>
-      <div class="card professional-card loading">
+      <div class="card professional-card loading project-card" data-project="web-portfolio">
         <h3>🌐 Web Portfolio</h3>
         <p>A fully responsive and animated personal portfolio showcasing modern web development techniques with <span class="highlight">CSS animations and interactive design</span>.</p>
+      </div>
+      <div class="card professional-card loading project-card" data-project="react-apps">
+        <h3>⚛️ React Applications</h3>
+        <p>Interactive web applications built with React, featuring <span class="highlight">component-based architecture</span> and modern state management solutions.</p>
       </div>
     </div>
   </section>
@@ -594,18 +848,33 @@
     <h2>Educational Qualification</h2>
     <p class="section-intro">Building a strong foundation in computer science and engineering through dedicated academic pursuit.</p>
     <div class="section-divider"></div>
-    <div class="content">
-      <div class="education-item fade-in">
-        <b>B.E Computer Science Engineering</b>
-        <p>Currently pursuing my degree as a pre-final year student, focusing on software development, algorithms, and emerging technologies.</p>
+    
+    <div class="education-grid">
+      <div class="education-card fade-in">
+        <div class="education-level">Bachelor's Degree</div>
+        <div class="education-details">
+          <strong>B.E Computer Science Engineering</strong><br>
+          Currently pursuing my degree as a pre-final year student, focusing on software development, algorithms, and emerging technologies.
+          <div class="education-score">In Progress</div>
+        </div>
       </div>
-      <div class="education-item fade-in">
-        <b>12th Grade - CBSE Board</b>
-        <p>Achieved 75.4% with strong performance in Mathematics and Science subjects, laying the groundwork for engineering studies.</p>
+      
+      <div class="education-card fade-in">
+        <div class="education-level">12th Grade</div>
+        <div class="education-details">
+          <strong>CBSE Board</strong><br>
+          Completed higher secondary education with strong performance in Mathematics and Science subjects, laying the groundwork for engineering studies.
+          <div class="education-score">75.4%</div>
+        </div>
       </div>
-      <div class="education-item fade-in">
-        <b>High School Excellence</b>
-        <p>Demonstrated consistent academic performance with particular strength in Mathematics and Science stream.</p>
+      
+      <div class="education-card fade-in">
+        <div class="education-level">10th Grade</div>
+        <div class="education-details">
+          <strong>CBSE Board</strong><br>
+          Successfully completed secondary education with excellent grades, demonstrating consistent academic performance and strong foundational knowledge.
+          <div class="education-score">Distinction</div>
+        </div>
       </div>
     </div>
   </section>
@@ -615,47 +884,96 @@
     <h2>Certificates & Achievements</h2>
     <p class="section-intro">Continuous learning through certified courses and skill development programs.</p>
     <div class="section-divider"></div>
-    <div class="grid">
-      <div class="card professional-card loading">
+    
+    <div class="nav-links">
+      <a href="#" class="nav-link" onclick="showCertificate('programming')">Programming</a>
+      <a href="#" class="nav-link" onclick="showCertificate('ml')">Machine Learning</a>
+      <a href="#" class="nav-link" onclick="showCertificate('web-dev')">Web Development</a>
+      <a href="#" class="nav-link" onclick="showCertificate('all')" style="background: var(--gradient-accent); color: var(--text-dark);">View All</a>
+    </div>
+
+    <div class="grid" id="certificates-grid">
+      <div class="card professional-card loading certificate-card" data-certificate="programming">
         <h3>🏆 Python Programming</h3>
-        <p>Comprehensive certification covering Python fundamentals, data structures, and practical applications in <span class="highlight">software development</span>.</p>
+        <p>Comprehensive certification covering Python fundamentals, data structures, and practical applications in <span class="highlight">software development</span>. Includes object-oriented programming and algorithm implementation.</p>
       </div>
-      <div class="card professional-card loading">
+      <div class="card professional-card loading certificate-card" data-certificate="ml">
         <h3>🏆 Machine Learning Basics</h3>
-        <p>Foundational understanding of ML concepts with hands-on experience in <span class="highlight">model building and data analysis</span>.</p>
+        <p>Foundational understanding of ML concepts with hands-on experience in <span class="highlight">model building and data analysis</span>. Covers supervised learning, data preprocessing, and model evaluation.</p>
       </div>
-      <div class="card professional-card loading">
+      <div class="card professional-card loading certificate-card" data-certificate="web-dev">
         <h3>🏆 Web Development</h3>
-        <p>Proficiency in modern web technologies including HTML5, CSS3, and JavaScript for <span class="highlight">responsive design projects</span>.</p>
+        <p>Proficiency in modern web technologies including HTML5, CSS3, and JavaScript for <span class="highlight">responsive design projects</span>. Focus on user experience and accessibility standards.</p>
       </div>
     </div>
   </section>
 
-  <!-- Academic Journey -->
+  <!-- Academic Journey Timeline -->
   <section id="journey" class="section">
     <h2>Academic Journey</h2>
-    <p class="section-intro">A story of growth, learning, and continuous evolution in the world of technology.</p>
+    <p class="section-intro">A timeline of growth, learning, and continuous evolution in the world of technology.</p>
     <div class="section-divider"></div>
-    <div class="content fade-in">
-      <p>My academic journey represents a commitment to <span class="highlight">excellence and innovation</span>. From excelling in foundational subjects to pursuing advanced engineering concepts, I've maintained a balance between theoretical knowledge and practical application. This journey has been characterized by consistent learning, adaptability, and an insatiable curiosity for emerging technologies.</p>
-      <br>
-      <p>Through coursework, personal projects, and content creation, I've developed a holistic approach to learning that combines technical skills with creative expression and effective communication.</p>
+    
+    <div class="timeline">
+      <div class="timeline-item fade-in">
+        <div class="timeline-content">
+          <div class="timeline-date">2020 - 2021</div>
+          <div class="timeline-title">High School Excellence</div>
+          <p>Completed 10th grade with distinction, excelling in Mathematics and Science. Developed strong analytical thinking and problem-solving skills.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item fade-in">
+        <div class="timeline-content">
+          <div class="timeline-date">2021 - 2023</div>
+          <div class="timeline-title">Higher Secondary Achievement</div>
+          <p>Secured 75.4% in CBSE 12th grade, focusing on Mathematics and Science stream. Built foundation for engineering studies.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item fade-in">
+        <div class="timeline-content">
+          <div class="timeline-date">2023 - Present</div>
+          <div class="timeline-title">Engineering Journey</div>
+          <p>Currently pursuing B.E in Computer Science Engineering. Balancing coursework with practical projects, internships, and content creation.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item fade-in">
+        <div class="timeline-content">
+          <div class="timeline-date">2024</div>
+          <div class="timeline-title">Professional Growth</div>
+          <p>Completed first internship at Casagenix, gained expertise in ReactJS and ML. Started content creation journey with Pixelsnbrushes.</p>
+        </div>
+      </div>
+      
+      <div class="timeline-item fade-in">
+        <div class="timeline-content">
+          <div class="timeline-date">2025 & Beyond</div>
+          <div class="timeline-title">Future Aspirations</div>
+          <p>Preparing for ISRO internship opportunities and advanced research in air traffic control systems. Continuing to innovate and learn.</p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Internships -->
   <section id="internships" class="section">
     <h2>Professional Experience</h2>
-    <p class="section-intro">Gaining real-world experience through internships and preparing for future opportunities.</p>
+    <p class="section-intro">Gaining real-world experience through internships and preparing for future opportunities in cutting-edge technology.</p>
     <div class="section-divider"></div>
     <div class="grid">
       <div class="card professional-card loading">
-        <h3>Casagenix - Software Development Intern</h3>
-        <p>Gained hands-on experience with <span class="highlight">ReactJS and Machine Learning</span> technologies, working on innovative projects to merge 2D architectural plans into immersive 3D visualizations.</p>
+        <h3>🚀 Casagenix - Software Development Intern</h3>
+        <p>Gained hands-on experience with <span class="highlight">ReactJS and Machine Learning</span> technologies, working on innovative projects to merge 2D architectural plans into immersive 3D visualizations. Collaborated with senior developers and contributed to production-level code.</p>
       </div>
       <div class="card professional-card loading">
-        <h3>Future Opportunities</h3>
-        <p>Actively preparing for prestigious internships including <span class="highlight">ISRO research programs</span> and air traffic control system development projects.</p>
+        <h3>🛰️ ISRO Research Preparation</h3>
+        <p>Actively preparing for prestigious <span class="highlight">ISRO research programs</span> focusing on space technology, satellite systems, and aerospace engineering applications. Building relevant skills in data analysis and system design.</p>
+      </div>
+      <div class="card professional-card loading">
+        <h3>✈️ Air Traffic Control Systems</h3>
+        <p>Exploring opportunities in <span class="highlight">air traffic management technology</span>, studying real-time systems, safety protocols, and automation in aviation infrastructure for future research contributions.</p>
       </div>
     </div>
   </section>
@@ -665,30 +983,27 @@
     <h2>Content Creation</h2>
     <p class="section-intro">Sharing knowledge and inspiration through engaging written content and creative storytelling.</p>
     <div class="section-divider"></div>
-    <div class="content fade-in">
-      <p>Through my platform <span class="highlight">Pixelsnbrushes</span>, I create content that bridges the gap between technical knowledge and everyday life. My writing focuses on study strategies, space exploration, and personal growth, resonating with students and lifelong learners who share a passion for discovery and innovation.</p>
-      <br>
-      <p>I believe in the power of storytelling to make complex concepts accessible and inspiring, helping others navigate their own learning journeys.</p>
-    </div>
-  </section>
-
-  <!-- Hobbies -->
-  <section id="hobbies" class="section">
-    <h2>Interests & Hobbies</h2>
-    <p class="section-intro">Exploring diverse interests that fuel creativity and personal growth beyond academics.</p>
-    <div class="section-divider"></div>
-    <div class="grid">
-      <div class="card professional-card loading">
-        <h3>📖 Avid Reader</h3>
-        <p>Exploring literature across technology, personal development, and spirituality to gain <span class="highlight">diverse perspectives</span> and continuous learning.</p>
+    
+    <div class="tabs-container">
+      <div class="tabs">
+        <div class="tab active" onclick="showWritingTab('general')">General Articles</div>
+        <div class="tab" onclick="showWritingTab('freelance')">Freelance Writing</div>
       </div>
-      <div class="card professional-card loading">
-        <h3>🎨 Creative Design</h3>
-        <p>Passionate about visual storytelling through poster design, digital art, and creating <span class="highlight">aesthetic layouts</span> that communicate effectively.</p>
+      
+      <div class="tab-content active" id="general-writing">
+        <div class="content fade-in">
+          <p>Through my platform <span class="highlight">Pixelsnbrushes</span>, I create engaging content that bridges the gap between technical knowledge and everyday life. My articles focus on study strategies, space exploration, technology trends, and personal growth, resonating with students and lifelong learners.</p>
+          <br>
+          <p>I believe in making complex concepts accessible through storytelling, helping others navigate their learning journeys with practical insights and inspiration.</p>
+        </div>
       </div>
-      <div class="card professional-card loading">
-        <h3>🌌 Space Exploration</h3>
-        <p>Deeply fascinated by astronomy, space missions, and <span class="highlight">ISRO's groundbreaking achievements</span> in space technology and exploration.</p>
+      
+      <div class="tab-content" id="freelance-writing">
+        <div class="content fade-in">
+          <p>As a freelance writer, I specialize in creating <span class="highlight">technical documentation</span>, educational content, and engaging blog posts for technology companies and educational platforms. My writing combines technical accuracy with clear communication.</p>
+          <br>
+          <p>I've worked on projects ranging from software tutorials to space technology articles, always ensuring content is both informative and engaging for the target audience.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -698,10 +1013,28 @@
     <h2>Freelance Services</h2>
     <p class="section-intro">Available for collaborative projects that combine technical expertise with creative innovation.</p>
     <div class="section-divider"></div>
-    <div class="content fade-in">
-      <p>I'm passionate about taking on freelance projects that challenge me to grow while delivering exceptional value. My expertise spans <span class="highlight">web development</span>, <span class="highlight">content creation</span>, and <span class="highlight">UI/UX design</span>. I approach each project with dedication, creativity, and a commitment to exceeding expectations.</p>
-      <br>
-      <p>Whether you need a modern website, engaging content, or intuitive design solutions, I'm ready to collaborate and bring your vision to life.</p>
+    
+    <div class="tabs-container">
+      <div class="tabs">
+        <div class="tab active" onclick="showFreelanceTab('content')">Content Writing</div>
+        <div class="tab" onclick="showFreelanceTab('design')">Design Services</div>
+      </div>
+      
+      <div class="tab-content active" id="content-freelance">
+        <div class="content fade-in">
+          <p>I offer professional <span class="highlight">content writing services</span> specializing in technology, education, and space science topics. My writing style combines technical accuracy with engaging storytelling, making complex subjects accessible to diverse audiences.</p>
+          <br>
+          <p><strong>Services include:</strong> Technical documentation, blog posts, educational articles, social media content, and copywriting for tech startups and educational platforms.</p>
+        </div>
+      </div>
+      
+      <div class="tab-content" id="design-freelance">
+        <div class="content fade-in">
+          <p>I provide creative <span class="highlight">design solutions</span> focusing on UI/UX design, digital graphics, and visual content creation. My design philosophy emphasizes clean aesthetics, user-centered design, and effective visual communication.</p>
+          <br>
+          <p><strong>Services include:</strong> Website design, poster creation, social media graphics, UI/UX mockups, and brand identity design for small businesses and personal projects.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -711,11 +1044,18 @@
     <p class="section-intro">Ready to collaborate, share ideas, or simply have a meaningful conversation about technology and innovation.</p>
     <div class="section-divider"></div>
     <div class="socials">
-      <a href="https://linkedin.com/in/yourprofile" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/yourprofile" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-      <a href="https://instagram.com/yourprofile" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://twitter.com/yourprofile" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="mailto:youremail@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://linkedin.com/in/sharon-rajapriya" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/sharonrajapriya" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://instagram.com/pixelsnbrushes" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://twitter.com/sharon_raj_p" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+      <a href="https://facebook.com/sharon.rajapriya" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://youtube.com/@pixelsnbrushes" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://pinterest.com/pixelsnbrushes" target="_blank" title="Pinterest"><i class="fab fa-pinterest"></i></a>
+      <a href="https://behance.net/sharonrajapriya" target="_blank" title="Behance"><i class="fab fa-behance"></i></a>
+      <a href="https://dribbble.com/sharonrajapriya" target="_blank" title="Dribbble"><i class="fab fa-dribbble"></i></a>
+      <a href="mailto:sharon.rajapriya@example.com" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="https://wa.me/1234567890" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://t.me/sharonrajapriya" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
     </div>
   </section>
 
@@ -725,6 +1065,80 @@
   </footer>
 
   <script>
+    // Project filtering functionality
+    function showProject(category) {
+      const cards = document.querySelectorAll('.project-card');
+      const links = document.querySelectorAll('.nav-links .nav-link');
+      
+      // Reset all nav links
+      links.forEach(link => {
+        link.style.background = 'var(--gradient-primary)';
+        link.style.color = 'var(--warm-white)';
+      });
+      
+      // Highlight active link
+      event.target.style.background = 'var(--gradient-accent)';
+      event.target.style.color = 'var(--text-dark)';
+      
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.project === category) {
+          card.style.display = 'block';
+          card.style.animation = 'fadeInUp 0.5s ease-out';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Certificate filtering functionality
+    function showCertificate(category) {
+      const cards = document.querySelectorAll('.certificate-card');
+      const links = document.querySelectorAll('#certificates .nav-links .nav-link');
+      
+      // Reset all nav links
+      links.forEach(link => {
+        link.style.background = 'var(--gradient-primary)';
+        link.style.color = 'var(--warm-white)';
+      });
+      
+      // Highlight active link
+      event.target.style.background = 'var(--gradient-accent)';
+      event.target.style.color = 'var(--text-dark)';
+      
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.certificate === category) {
+          card.style.display = 'block';
+          card.style.animation = 'fadeInUp 0.5s ease-out';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Writing tabs functionality
+    function showWritingTab(tab) {
+      const tabs = document.querySelectorAll('#writing .tab');
+      const contents = document.querySelectorAll('#writing .tab-content');
+      
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+      
+      event.target.classList.add('active');
+      document.getElementById(tab + '-writing').classList.add('active');
+    }
+
+    // Freelance tabs functionality
+    function showFreelanceTab(tab) {
+      const tabs = document.querySelectorAll('#freelance .tab');
+      const contents = document.querySelectorAll('#freelance .tab-content');
+      
+      tabs.forEach(t => t.classList.remove('active'));
+      contents.forEach(c => c.classList.remove('active'));
+      
+      event.target.classList.add('active');
+      document.getElementById(tab + '-freelance').classList.add('active');
+    }
+
     // Smooth scroll animation observer
     const observerOptions = {
       threshold: 0.1,
@@ -739,7 +1153,7 @@
       });
     }, observerOptions);
 
-    // Observe all fade-in elements
+    // Initialize on page load
     document.addEventListener('DOMContentLoaded', () => {
       const fadeElements = document.querySelectorAll('.fade-in');
       fadeElements.forEach(el => observer.observe(el));
